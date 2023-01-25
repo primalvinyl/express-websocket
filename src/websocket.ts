@@ -2,7 +2,7 @@ import { Server, WebSocketServer } from 'ws';
 import { Server as HTTPServer } from 'http';
 
 class WebSocket {
-    websocketServer: Server | undefined;
+    private websocketServer: Server | undefined;
 
     public createServer (httpServer: HTTPServer) {
         this.websocketServer = new WebSocketServer({
