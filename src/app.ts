@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import dotenv from 'dotenv';
+import morgan from 'morgan';
 
 // initialize environment variables
 dotenv.config({
@@ -9,6 +10,9 @@ dotenv.config({
 
 // initialize express service
 const app = express();
+
+// middleware
+app.use(morgan('dev'));
 
 // routes
 app.get('/', (req, res) => res.send('Hello World'));
